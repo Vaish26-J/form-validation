@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#6190E8, #A7BFE8);
+    font-family: 'Montserrat', sans-serif;
+}
+
+form{
+    width: 30%;
+    padding: 5px;
+    background-color: white;  
+    border-radius: 5px; 
+}
+
+form h1,p{
+    text-align: center;
+    margin: 10px;
+    color: #6190E8;
+}
+
+p{
+    color: black;
+}
+
+hr{
+    width: 80%;
+}
+
+.input-container{
+    position: relative;
+    width: 70%;
+    /* background-color: cyan; */
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.input-field, input[type=submit]{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.input-field{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    transition: all 1s;
+}
+
+.input-container:nth-of-type(1){
+    margin-top: 10px;
+}
+
+.placeholder{
+    position: absolute;
+    z-index: 1;
+    top: 25px;
+    left: 5px;
+    /* transform: translateY(-150%); */
+    transition: all 1s;
+    color: rgba(40, 39, 39, 0.788);
+}
+
+.input-field:focus{
+    outline: none;
+    border-color: #6595ef;
+}
+
+.input-field:focus ~ .placeholder, .input-field:valid ~ .placeholder{
+    /* transform: translateY(-50%); */
+    /* font-size: 0.85em; */
+    top: -2px;
+    color: #6595ef;
+}
+
+input[type=submit]{
+    padding: 12px 7px;
+    background-color: #6190E8;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#submit.disabled{
+    cursor: no-drop;
+}
+
+#group > .error{
+    border-color: red;
+    color: red;
+}
+
+.err-msg{
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+}
+
+.active{
+    display: block;
+}
+
+.input-icon{
+    position: absolute;
+    right: 5px;
+    bottom: 30px;
+}
+
+.animation{
+    animation-name: appear;
+    animation-duration: 0.5s;
+}
+
+@media (max-width: 1200px) {
+    form{
+        width: 50%;
+    }
+}
+
+@media (max-width: 750px){
+    form{
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px){
+    form{
+        width: 100%;
+    }
+}
+
+@keyframes appear {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+  
